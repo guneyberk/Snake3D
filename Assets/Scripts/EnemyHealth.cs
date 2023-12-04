@@ -30,11 +30,14 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             gameOver = true;
-
             _animator.SetBool("IsDeath", gameOver);
-            transform.GetComponent<NavMeshAgent>().enabled = false;
-            
+            transform.GetComponent<NavMeshAgent>().enabled = false;            
         }
+    }
+
+    void OnDeath()
+    {
+        gameObject.SetActive(false);
     }
 
 

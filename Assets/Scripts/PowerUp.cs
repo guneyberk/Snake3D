@@ -32,12 +32,6 @@ public class PowerUp : MonoBehaviour
         {
             PowerUpCooldown();
         }
-        if (_isPowerUpActive)
-        {
-           
-            
-        }
-
     }
 
     public void PowerUpCooldown()

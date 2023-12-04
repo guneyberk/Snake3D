@@ -6,9 +6,10 @@ public class EnemyMovement : MonoBehaviour
     NavMeshAgent _enemyNavMesh;
     Animator _animator;
 
-    [SerializeField] GameObject _player;
+     GameObject _player;
     private void Start()
     {
+        _player = GameObject.Find("Swat");
         _animator = GetComponent<Animator>();
         _enemyNavMesh = GetComponent<NavMeshAgent>();
     }
