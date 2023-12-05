@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int health = 5;
+    int _health = 5;
     private bool gameOver;
     Animator _animator;
 
@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.collider.tag == "Bullet")
         {
-            health--;
+            _health--;
         }
     }
 
@@ -27,16 +27,20 @@ public class EnemyHealth : MonoBehaviour
 
     private void GameOver()
     {
-        if (health <= 0)
+        if (_health <= 0)
         {
             gameOver = true;
             _animator.SetBool("IsDeath", gameOver);
-            transform.GetComponent<NavMeshAgent>().enabled = false;            
+            transform.GetComponent<NavMeshAgent>().enabled = false;
         }
     }
 
     void OnDeath()
     {
+        EnemySpawner.enemyCount--;
+        Debug.Log(EnemySpawner.enemyCount);
+        _health = 5;
+        gameObject.GetComponent<NavMeshAgent>().gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 
