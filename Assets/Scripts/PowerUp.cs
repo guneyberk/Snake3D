@@ -1,7 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+
+    readonly int animHash = Animator.StringToHash("speed");
     private bool _isPowerUpActive;
     private float _PowerUpTimer = 0.0f;
     private float _PowerUpTime = 5.0f;
@@ -9,13 +12,18 @@ public class PowerUp : MonoBehaviour
     [SerializeField] Material _PlayerMaterial;
     private Color colorEnd=Color.black;
     private Color colorStart= Color.yellow;
+    private Animator _animator;
 
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Collectible")
         {
             collision.gameObject.SetActive(false);
-            transform.GetComponent<Animator>().SetFloat("speed", 2f);
+            _animator.SetFloat(animHash, 2f);
             _isPowerUpActive = true;
             _PowerUpTimer = Time.time + _PowerUpTime;
             float lerp = Mathf.PingPong(Time.time, _PowerUpTimer) / _PowerUpTimer;
@@ -36,7 +44,7 @@ public class PowerUp : MonoBehaviour
 
     public void PowerUpCooldown()
     {
-        transform.GetComponent<Animator>().SetFloat("speed", 1f);
+        _animator.SetFloat(animHash, 1f);
         _isPowerUpActive = false;
         _PlayerMaterial.color = colorStart;
     }

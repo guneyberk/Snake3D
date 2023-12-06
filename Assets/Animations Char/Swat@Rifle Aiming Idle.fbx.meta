@@ -94,12 +94,12 @@ ModelImporter:
       keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000000000001000000010000000100000001000000000000000000000000000000000000000000000000000000
       curves: []
       events: []
       transformMask: []
       maskType: 3
-      maskSource: {instanceID: 0}
+      maskSource: {fileID: 31900000, guid: a40d28d313442114b8be0a34cdf5ca86, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: mixamo.com

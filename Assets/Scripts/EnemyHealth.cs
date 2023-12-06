@@ -3,14 +3,18 @@ using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    readonly int animHash = Animator.StringToHash("IsDeath");
     int _health = 5;
     private bool gameOver;
     Animator _animator;
-
+    private NavMeshAgent _navMeshAgent;
+    private Collider _collider;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _collider = GetComponent<Collider>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,18 +34,19 @@ public class EnemyHealth : MonoBehaviour
         if (_health <= 0)
         {
             gameOver = true;
-            _animator.SetBool("IsDeath", gameOver);
-            transform.GetComponent<NavMeshAgent>().enabled = false;
+            _animator.SetBool(animHash,true);
+            _navMeshAgent.enabled = false;
+            _collider.enabled = false;
         }
     }
 
     void OnDeath()
     {
         EnemySpawner.enemyCount--;
-        Debug.Log(EnemySpawner.enemyCount);
         _health = 5;
-        gameObject.GetComponent<NavMeshAgent>().gameObject.SetActive(true);
         gameObject.SetActive(false);
+        _navMeshAgent.enabled = true;
+        _collider.enabled = true;
     }
 
 
