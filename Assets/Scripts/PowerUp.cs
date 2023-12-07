@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
@@ -10,8 +9,8 @@ public class PowerUp : MonoBehaviour
     private float _PowerUpTime = 5.0f;
 
     [SerializeField] Material _PlayerMaterial;
-    private Color colorEnd=Color.black;
-    private Color colorStart= Color.yellow;
+    private Color colorEnd = Color.black;
+    private Color colorStart = Color.yellow;
     private Animator _animator;
 
     private void Start()

@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyMovement : MonoBehaviour
 {
+    readonly int animHash = Animator.StringToHash("AttackPlayer");
+
     NavMeshAgent _enemyNavMesh;
     Animator _animator;
 
-     GameObject _player;
+    GameObject _player;
     private void Start()
     {
         _player = GameObject.Find("Swat");
@@ -22,13 +25,13 @@ public class EnemyMovement : MonoBehaviour
         _enemyNavMesh.SetDestination(_player.transform.position);
         if (Vector3.Distance(transform.position, _player.transform.position) <= 2f)
         {
-            _animator.SetBool("AttackPlayer", true);
+            _animator.SetBool(animHash, true);
             _enemyNavMesh.enabled = false;
         }
         else
         {
             _enemyNavMesh.enabled = true;
-            _animator.SetBool("AttackPlayer", false);
+            _animator.SetBool(animHash, false);
         }
 
     }

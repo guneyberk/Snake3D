@@ -5,8 +5,6 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject _enemySpawnPoints;
     public static int enemyCount=0;
-    bool _newRound=true;
-
     int _enemySpawnCount = 0;
     private void Start()
     {

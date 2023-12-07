@@ -2,36 +2,41 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector3 _input;
-    [SerializeField] Rigidbody _rb;
-    [SerializeField] float _speed = 5f;
-    [SerializeField] float _turnSpeed = 360;
-    [SerializeField] Animator _animator;
+    readonly int animHash_walk = Animator.StringToHash("Walk");
+    readonly int animHash_turn = Animator.StringToHash("Turn");
+    readonly int animHash_fire = Animator.StringToHash("Fire");
+    readonly int animHash_shift = Animator.StringToHash("IsShiftPressed");
+    Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
     private void Update()
     {
         GetherInput();
     }
     void GetherInput()
     {
-        _animator.SetFloat("Walk", Input.GetAxis("Vertical"));
-        _animator.SetFloat("Turn", Input.GetAxis("Horizontal"));
+        _animator.SetFloat(animHash_walk, Input.GetAxis("Vertical"));
+        _animator.SetFloat(animHash_turn, Input.GetAxis("Horizontal"));
 
         if (Input.GetMouseButtonDown(0))
         {
-            _animator.SetBool("Fire", true);
+            _animator.SetBool(animHash_fire, true);
         }
         if (Input.GetMouseButtonUp(0))
         {
-            _animator.SetBool("Fire", false);
+            _animator.SetBool(animHash_fire, false);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _animator.SetBool("IsShiftPressed", true);
-            _animator.SetBool("Fire", false);
+            _animator.SetBool(animHash_shift, true);
+            _animator.SetBool(animHash_fire, false);
 
         }
         else
-            _animator.SetBool("IsShiftPressed", false);
+            _animator.SetBool(animHash_shift, false);
 
     }
 }

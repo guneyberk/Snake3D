@@ -7,7 +7,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject _enemyPrefab;
     List<GameObject> _bullets;
-    List<GameObject>    _enemyPool;
+    List<GameObject> _enemyPool;
     int _bulletCount = 30;
     int _enemyCount = 100;
 
@@ -50,7 +50,7 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-    
+
     public GameObject SpawnEnemies()
     {
         for (int i = 0; i < _enemyPool.Count; i++)

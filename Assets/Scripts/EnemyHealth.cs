@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
         if (_health <= 0)
         {
             gameOver = true;
-            _animator.SetBool(animHash,true);
+            _animator.SetBool(animHash, true);
             _navMeshAgent.enabled = false;
             _collider.enabled = false;
         }
