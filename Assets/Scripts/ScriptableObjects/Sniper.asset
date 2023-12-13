@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   itemName: Sniper
-  weaponModel: {fileID: 0}
+  weaponModel: {fileID: 2352997721424495953, guid: bb0cd604d12965b48bc6104313af13d8, type: 3}
   description: 
+  startingAmmo: 0
+  startingCondition: 0

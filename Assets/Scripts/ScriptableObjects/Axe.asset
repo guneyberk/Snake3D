@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d34d5746e6e66409e2be3c7d3e67c9, type: 3}
-  m_Name: Sniper 1
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  itemName: Sniper
-  weaponModel: {fileID: 0}
+  itemName: Axe
+  weaponModel: {fileID: 4388694800061094808, guid: 822bcce9cc62cc843925c7bc50a045af, type: 3}
   description: 
+  startingAmmo: 0
+  startingCondition: 0

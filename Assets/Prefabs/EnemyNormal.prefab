@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000dcec862c79da49bfc99ae1cd3423c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 566539879243603878, guid: 0ba376bd45a73d44a9731a01d181138c, type: 3}
 --- !u!195 &7992820309018105394
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -153,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efdbe23ee532d449a9d4e3d293a4257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: bb8ffdae065d0d347beed9f290fa3834, type: 2}
 --- !u!65 &1880302024348651236
 BoxCollider:
   m_ObjectHideFlags: 0

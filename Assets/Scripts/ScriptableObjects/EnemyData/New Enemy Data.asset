@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d34d5746e6e66409e2be3c7d3e67c9, type: 3}
-  m_Name: Shotgun
+  m_Script: {fileID: 11500000, guid: 483f492149dd8864e9c0a07c37430344, type: 3}
+  m_Name: New Enemy Data
   m_EditorClassIdentifier: 
-  itemName: Shotgun
-  weaponModel: {fileID: 4205521026231025682, guid: f7a69565ab2ff984789da792b0969f4b, type: 3}
-  description: 
-  startingAmmo: 0
-  startingCondition: 0
+  EnemyHealth: 0

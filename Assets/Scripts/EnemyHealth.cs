@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     Animator _animator;
     private NavMeshAgent _navMeshAgent;
     private Collider _collider;
+    public EnemyData enemyData;
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.collider.tag == "Bullet")
         {
-            _health--;
+            enemyData.EnemyHealth--;
         }
     }
 
@@ -31,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void GameOver()
     {
-        if (_health <= 0)
+        if (enemyData.EnemyHealth <= 0)
         {
             gameOver = true;
             _animator.SetBool(animHash, true);
@@ -43,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
     void OnDeath()
     {
         EnemySpawner.enemyCount--;
-        _health = 5;
+        enemyData.EnemyHealth = 5;
         gameObject.SetActive(false);
         _navMeshAgent.enabled = true;
         _collider.enabled = true;

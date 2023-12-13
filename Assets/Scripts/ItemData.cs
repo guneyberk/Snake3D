@@ -10,4 +10,7 @@ public class ItemData : ScriptableObject
     public GameObject weaponModel;
     [TextArea] 
     public string description;
+    public int startingAmmo;
+    public int startingCondition;
+
 }
