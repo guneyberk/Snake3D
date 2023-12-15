@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebfa1a59ff8a1744be097dd772b9ee5, type: 3}
   m_Name: New Player Data
   m_EditorClassIdentifier: 
-  health: 0
-  currentPosition: {x: 0, y: 0, z: 0}
+  health: 10
+  currentPosition: {x: -0.87446177, y: -0.0013105869, z: -6.565433}

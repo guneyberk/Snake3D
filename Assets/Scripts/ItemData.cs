@@ -10,7 +10,11 @@ public class ItemData : ScriptableObject
     public GameObject weaponModel;
     [TextArea] 
     public string description;
+    public int ammoCount;
+    public float rateOfFire;
+    public float reloadTime;
+
     public int startingAmmo;
-    public int startingCondition;
+
 
 }
