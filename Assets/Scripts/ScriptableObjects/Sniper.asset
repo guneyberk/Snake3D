@@ -15,5 +15,8 @@ MonoBehaviour:
   itemName: Sniper
   weaponModel: {fileID: 2352997721424495953, guid: bb0cd604d12965b48bc6104313af13d8, type: 3}
   description: 
-  startingAmmo: 0
-  startingCondition: 0
+  ammoCount: 5
+  rateOfFire: 1
+  reloadTime: 2
+  damage: 0
+  startingAmmo: 5

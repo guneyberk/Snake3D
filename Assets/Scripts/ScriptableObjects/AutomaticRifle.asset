@@ -15,5 +15,8 @@ MonoBehaviour:
   itemName: AR24
   weaponModel: {fileID: 4311248730837266121, guid: c20daf91d2bce304c85fec03f5fafd3b, type: 3}
   description: Full automatic rifle.
+  ammoCount: 30
+  rateOfFire: 0.2
+  reloadTime: 3
+  damage: 0
   startingAmmo: 30
-  startingCondition: 0

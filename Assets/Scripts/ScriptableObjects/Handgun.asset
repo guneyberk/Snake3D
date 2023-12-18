@@ -15,5 +15,8 @@ MonoBehaviour:
   itemName: Handgun
   weaponModel: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
   description: 
-  startingAmmo: 0
-  startingCondition: 0
+  ammoCount: 7
+  rateOfFire: 0.5
+  reloadTime: 10
+  damage: 0
+  startingAmmo: 7

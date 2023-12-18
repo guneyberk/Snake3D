@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            _animator.SetBool(animHash_fire, false);
+            FireMethod();
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -37,6 +38,15 @@ public class PlayerController : MonoBehaviour
         }
         else
             _animator.SetBool(animHash_shift, false);
+
+    }
+
+    IEnumerator FireMethod()
+    {
+
+        _animator.SetBool(animHash_fire, false);
+        yield return new WaitForSeconds(5f);
+
 
     }
 }

@@ -13,6 +13,7 @@ public class ItemData : ScriptableObject
     public int ammoCount;
     public float rateOfFire;
     public float reloadTime;
+    public int damage;
 
     public int startingAmmo;
 

@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Collider _collider;
     public EnemyData enemyData;
+    public ItemData weaponData;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.collider.tag == "Bullet")
         {
-            _health--;
+            _health -= weaponData.damage;
         }
     }
 
