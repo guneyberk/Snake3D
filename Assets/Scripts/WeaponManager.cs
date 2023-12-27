@@ -11,7 +11,9 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < weapons.Length; i++)
         {
-            weaponsIns[i] = Instantiate(weapons[i].weaponModel);
+            weaponsIns.Add(Instantiate(weapons[i].weaponModel, spawnPoint));
+            weaponsIns[i].transform.position = spawnPoint.position;
+            weaponsIns[i].transform.rotation = spawnPoint.rotation;
             weaponsIns[i].SetActive(false);
         }
         SwitchWeapon(_currentWeaponIndex);
@@ -30,6 +32,7 @@ public class WeaponManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SwitchWeapon(2);
+            
         }
     }
 
@@ -37,15 +40,17 @@ public class WeaponManager : MonoBehaviour
     {
         if (newIndex >= 0 && newIndex < weapons.Length)
         {
-            weapons[_currentWeaponIndex].weaponModel.SetActive(false);
+            weaponsIns[_currentWeaponIndex].SetActive(false);
 
-
+            
             weaponsIns[newIndex].SetActive(true);
+           
 
 
             _currentWeaponIndex = newIndex;
 
             Debug.Log("Switched to" + weapons[newIndex].itemName);
+            ScriptableObjectManager.instance.ChangeActiveWeaponData(weapons[newIndex]);
         }
     }
 
