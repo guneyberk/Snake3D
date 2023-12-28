@@ -4,7 +4,7 @@ public class PowerUp : MonoBehaviour
 {
 
     readonly int animHash = Animator.StringToHash("speed");
-    private bool _isPowerUpActive;
+    public static bool _isPowerUpActive;
     private float _PowerUpTimer = 0.0f;
     private float _PowerUpTime = 5.0f;
 
@@ -22,7 +22,6 @@ public class PowerUp : MonoBehaviour
         if (collision.transform.tag == "Collectible")
         {
             collision.gameObject.SetActive(false);
-            _animator.SetFloat(animHash, 2f);
             _isPowerUpActive = true;
             _PowerUpTimer = Time.time + _PowerUpTime;
             float lerp = Mathf.PingPong(Time.time, _PowerUpTimer) / _PowerUpTimer;

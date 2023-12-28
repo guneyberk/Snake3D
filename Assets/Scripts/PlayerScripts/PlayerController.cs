@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -23,17 +22,23 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(animHash_walk, Input.GetAxis("Vertical"));
         _animator.SetFloat(animHash_turn, Input.GetAxis("Horizontal"));
 
-        if (Input.GetMouseButtonDown(0) && Time.time>nextFireTime)
+        if (Input.GetMouseButton(0))
         {
-            Debug.Log(ScriptableObjectManager.instance.itemData.rateOfFire);
-            nextFireTime = Time.time + 1f / ScriptableObjectManager.instance.itemData.rateOfFire;
-            _animator.SetBool(animHash_fire, true);
+            if (PowerUp._isPowerUpActive)
+            {
+                _animator.SetFloat("speed", ScriptableObjectManager.instance.itemData.rateOfFire * 2f);
+                _animator.SetBool(animHash_fire, true);
+
+            }
+            else
+            {
+                _animator.SetFloat("speed", ScriptableObjectManager.instance.itemData.rateOfFire);
+                _animator.SetBool(animHash_fire, true);
+
+            }
 
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            FireMethod();
-        }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _animator.SetBool(animHash_shift, true);
