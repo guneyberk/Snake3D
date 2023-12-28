@@ -5,9 +5,11 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool Instance;
     [SerializeField] GameObject _bulletPrefab;
+    [SerializeField] GameObject _explosionPrefab;
     [SerializeField] GameObject _enemyPrefab;
     List<GameObject> _bullets;
     List<GameObject> _enemyPool;
+    List<GameObject> _explosion;
     int _bulletCount = 30;
     int _enemyCount = 100;
 
@@ -22,12 +24,17 @@ public class ObjectPool : MonoBehaviour
 
         _bullets = new List<GameObject>();
         _enemyPool = new List<GameObject>();
+        _explosion = new List<GameObject>();
         GameObject tmp;
+        GameObject tmpexplosion;
         GameObject tmpEnemy;
         for (int i = 0; i < _bulletCount; i++)
         {
             tmp = Instantiate(_bulletPrefab);
+            tmpexplosion = Instantiate(_explosionPrefab);
             tmp.SetActive(false);
+            tmpexplosion.SetActive(false);
+            _explosion.Add(tmpexplosion);
             _bullets.Add(tmp);
         }
         for (int i = 0; i < _enemyCount; i++)
@@ -36,6 +43,7 @@ public class ObjectPool : MonoBehaviour
             tmpEnemy.SetActive(false);
             _enemyPool.Add(tmpEnemy);
         }
+        
     }
 
     public GameObject SpawnBullet()
@@ -63,6 +71,21 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
+    
+    public GameObject SpawnExplosion()
+    {
+        for (int i = 0; i < _bullets.Count; i++)
+        {
+            if (!_explosion[i].activeInHierarchy)
+            {
+                return _explosion[i];
+            }
+
+        }
+        return null;
+    }
+
+    
 }
 
 

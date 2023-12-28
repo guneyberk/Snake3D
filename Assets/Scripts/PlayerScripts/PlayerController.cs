@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     readonly int animHash_fire = Animator.StringToHash("Fire");
     readonly int animHash_shift = Animator.StringToHash("IsShiftPressed");
     Animator _animator;
+    private float nextFireTime;
 
     private void Start()
     {
@@ -22,9 +23,12 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(animHash_walk, Input.GetAxis("Vertical"));
         _animator.SetFloat(animHash_turn, Input.GetAxis("Horizontal"));
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time>nextFireTime)
         {
+            Debug.Log(ScriptableObjectManager.instance.itemData.rateOfFire);
+            nextFireTime = Time.time + 1f / ScriptableObjectManager.instance.itemData.rateOfFire;
             _animator.SetBool(animHash_fire, true);
+
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -41,11 +45,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    IEnumerator FireMethod()
+    void FireMethod()
     {
 
         _animator.SetBool(animHash_fire, false);
-        yield return new WaitForSeconds(5f);
 
 
     }
