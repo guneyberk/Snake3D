@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
@@ -6,6 +7,8 @@ public class MouseFollow : MonoBehaviour
     [SerializeField] LayerMask _groundMask;
     [SerializeField] Transform _spawnPoint;
     float _bulletSpeed = 10000f;
+    public int pelletCount = 5;
+    public float spreadAngle = 20f;
     private void Update()
     {
         Aim();
@@ -32,7 +35,7 @@ public class MouseFollow : MonoBehaviour
             transform.forward = direction;
             return direction;
 
-           
+
         }
         return Vector3.zero;
 
@@ -43,16 +46,33 @@ public class MouseFollow : MonoBehaviour
     void Fire()
     {
 
-        GameObject _bullets = ObjectPool.Instance.SpawnBullet();
-        if (_bullets != null)
+        if (ScriptableObjectManager.instance.itemData.itemName == "Shotgun")
         {
-            Vector3 dir = Aim();
-            _bullets.SetActive(true);
-            _bullets.transform.position = _spawnPoint.position;
-            _bullets.transform.Rotate(dir);
-            _bullets.GetComponent<Rigidbody>().velocity = dir.normalized * _bulletSpeed *Time.deltaTime;
+            for (int i = 0; i < pelletCount; i++)
+            {
+                GameObject _bulletsShotgun = ObjectPool.Instance.SpawnBullet();
+                if (_bulletsShotgun != null)
+                {
+                    float randomSpread =UnityEngine.Random.Range(-spreadAngle, spreadAngle);
+                    Quaternion spreadRotation = Quaternion.Euler(randomSpread, 0f, randomSpread);
+                    Vector3 dirShotgun = Aim();
+                    _bulletsShotgun.SetActive(true);
+                    _bulletsShotgun.transform.position = _spawnPoint.position;
+                    _bulletsShotgun.GetComponent<Rigidbody>().velocity = (dirShotgun.normalized) * _bulletSpeed * Time.deltaTime;
+                }
+            }
+
         }
-
+            GameObject _bullets = ObjectPool.Instance.SpawnBullet();
+            if (_bullets != null)
+            {
+                Vector3 dir = Aim();
+                _bullets.SetActive(true);
+                _bullets.transform.position = _spawnPoint.position;
+                _bullets.transform.Rotate(dir);
+                _bullets.GetComponent<Rigidbody>().velocity = dir.normalized * _bulletSpeed * Time.deltaTime;
+            }
     }
-
 }
+
+

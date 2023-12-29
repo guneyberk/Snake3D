@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rifle_magazine_001
       objectReference: {fileID: 0}
+    - target: {fileID: 263932503921055599, guid: f6311a265ebfe094b84c34021d63e254, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 640212199001066965, guid: f6311a265ebfe094b84c34021d63e254, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -138,6 +142,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c0d77e676f3f0ef4ebbfb067fe81ae27, type: 3}
       propertyPath: m_Name
       value: rifle_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0d77e676f3f0ef4ebbfb067fe81ae27, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
