@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AutomaticRifle
   m_EditorClassIdentifier: 
   itemName: AR24
-  weaponModel: {fileID: 4311248730837266121, guid: c20daf91d2bce304c85fec03f5fafd3b, type: 3}
+  weaponModel: {fileID: 6964778127573400644, guid: 2f1b78fdc531e0c439773ebaa66ad3d1, type: 3}
   description: Full automatic rifle.
   ammoCount: 30
   rateOfFire: 0.8

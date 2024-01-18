@@ -44,12 +44,7 @@ public class WeaponManager : MonoBehaviour
 
             
             weaponsIns[newIndex].SetActive(true);
-           
-
-
             _currentWeaponIndex = newIndex;
-
-            Debug.Log("Switched to" + weapons[newIndex].itemName);
             ScriptableObjectManager.instance.ChangeActiveWeaponData(weapons[newIndex]);
         }
     }

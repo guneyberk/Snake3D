@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PlayerData : ScriptableObject
 {
-    public float health;
-    public Vector3 currentPosition;
+    public int health;
+    public string playerName;
 }

@@ -34,8 +34,6 @@ public class MouseFollow : MonoBehaviour
             direction.y = 0;
             transform.forward = direction;
             return direction;
-
-
         }
         return Vector3.zero;
 
@@ -54,7 +52,6 @@ public class MouseFollow : MonoBehaviour
                 if (_bulletsShotgun != null)
                 {
                     float randomSpread =UnityEngine.Random.Range(-spreadAngle, spreadAngle);
-                    Quaternion spreadRotation = Quaternion.Euler(randomSpread, 0f, randomSpread);
                     Vector3 dirShotgun = Aim();
                     _bulletsShotgun.SetActive(true);
                     _bulletsShotgun.transform.position = _spawnPoint.position;

@@ -1,0 +1,4 @@
+repository "Snake3D@guneybrk95@cloud"
+  path "/"
+    br "/main"
+    co "/main"

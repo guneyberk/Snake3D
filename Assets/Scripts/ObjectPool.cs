@@ -6,7 +6,7 @@ public class ObjectPool : MonoBehaviour
     public static ObjectPool Instance;
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject _explosionPrefab;
-    [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] List<EnemyData> _enemyData;
     List<GameObject> _bullets;
     List<GameObject> _enemyPool;
     List<GameObject> _explosion;
@@ -39,11 +39,13 @@ public class ObjectPool : MonoBehaviour
         }
         for (int i = 0; i < _enemyCount; i++)
         {
-            tmpEnemy = Instantiate(_enemyPrefab);
+
+            tmpEnemy = Instantiate(ScriptableObjectManager.instance.EnemyChoose().EnemyPrefab);
             tmpEnemy.SetActive(false);
             _enemyPool.Add(tmpEnemy);
+
         }
-        
+
     }
 
     public GameObject SpawnBullet()
@@ -71,7 +73,7 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-    
+
     public GameObject SpawnExplosion()
     {
         for (int i = 0; i < _bullets.Count; i++)
@@ -85,7 +87,7 @@ public class ObjectPool : MonoBehaviour
         return null;
     }
 
-    
+
 }
 
 

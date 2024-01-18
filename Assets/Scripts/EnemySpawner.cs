@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("NewRound",5f,0.1f);
+        enemyCount = 0;
     }
     private void NewRound()
     {

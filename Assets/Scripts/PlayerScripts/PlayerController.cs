@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     readonly int animHash_fire = Animator.StringToHash("Fire");
     readonly int animHash_shift = Animator.StringToHash("IsShiftPressed");
     Animator _animator;
-    private float nextFireTime;
 
     private void Start()
     {
