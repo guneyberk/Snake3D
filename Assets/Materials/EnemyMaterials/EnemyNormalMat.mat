@@ -12,9 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _METALICON_ON
-  - _SMOOTHNESSON_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,34 +77,34 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EYESSMOOTHNESS: 0.7
+    - _EYESSMOOTHNESS: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HAIRSMOOTHNESS: 0.1
-    - _LEATHER1SMOOTHNESS: 0.3
-    - _LEATHER2SMOOTHNESS: 0.3
-    - _LEATHER3SMOOTHNESS: 0.3
-    - _LEATHER4SMOOTHNESS: 0.3
-    - _LIPSSMOOTHNESS: 0.4
-    - _METAL1METALLIC: 0.65
-    - _METAL1SMOOTHNESS: 0.7
-    - _METAL2METALLIC: 0.65
-    - _METAL2SMOOTHNESS: 0.7
-    - _METAL3METALLIC: 0.65
-    - _METAL3SMOOTHNESS: 0.7
-    - _METAL4METALLIC: 0.65
-    - _METAL4SMOOTHNESS: 0.7
-    - _MetalicOn: 1
+    - _HAIRSMOOTHNESS: 0
+    - _LEATHER1SMOOTHNESS: 0
+    - _LEATHER2SMOOTHNESS: 0
+    - _LEATHER3SMOOTHNESS: 0
+    - _LEATHER4SMOOTHNESS: 0
+    - _LIPSSMOOTHNESS: 0
+    - _METAL1METALLIC: 0
+    - _METAL1SMOOTHNESS: 0
+    - _METAL2METALLIC: 0
+    - _METAL2SMOOTHNESS: 0
+    - _METAL3METALLIC: 0
+    - _METAL3SMOOTHNESS: 0
+    - _METAL4METALLIC: 0
+    - _METAL4SMOOTHNESS: 0
+    - _MetalicOn: 0
     - _Metallic: 0
     - _Mode: 0
-    - _OCCLUSION: 0.5
-    - _OTHERSMOOTHNESS: 0.3
+    - _OCCLUSION: 0
+    - _OTHERSMOOTHNESS: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SCLERASMOOTHNESS: 0.5
-    - _SKINSMOOTHNESS: 0.3
-    - _SmoothnessOn: 1
+    - _SCLERASMOOTHNESS: 0
+    - _SKINSMOOTHNESS: 0
+    - _SmoothnessOn: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -124,16 +122,16 @@ Material:
     - _FEATHERS1COLOR: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
     - _FEATHERS2COLOR: {r: 0.6792453, g: 0, b: 0, a: 0}
     - _HAIRCOLOR: {r: 1, g: 0, b: 0, a: 0}
-    - _LEATHER1COLOR: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
-    - _LEATHER2COLOR: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
-    - _LEATHER3COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
-    - _LEATHER4COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
+    - _LEATHER1COLOR: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 0}
+    - _LEATHER2COLOR: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 0}
+    - _LEATHER3COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 0}
+    - _LEATHER4COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 0}
     - _LIPSCOLOR: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
-    - _METAL1COLOR: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
+    - _METAL1COLOR: {r: 0.13272728, g: 0.14978608, b: 0.15209825, a: 0}
     - _METAL2COLOR: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
     - _METAL3COLOR: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
     - _METAL4COLOR: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
     - _OTHERCOLOR: {r: 0.5188679, g: 0.4637216, b: 0.3206212, a: 0}
     - _SCLERACOLOR: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
-    - _SKINCOLOR: {r: 2.02193, g: 1.0081, b: 0.6199315, a: 0}
+    - _SKINCOLOR: {r: 11.984314, g: 5.975176, b: 3.6744368, a: 0}
   m_BuildTextureStacks: []
