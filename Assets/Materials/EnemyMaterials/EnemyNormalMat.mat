@@ -133,5 +133,5 @@ Material:
     - _METAL4COLOR: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
     - _OTHERCOLOR: {r: 0.5188679, g: 0.4637216, b: 0.3206212, a: 0}
     - _SCLERACOLOR: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
-    - _SKINCOLOR: {r: 11.984314, g: 5.975176, b: 3.6744368, a: 0}
+    - _SKINCOLOR: {r: 1024, g: 1024, b: 1024, a: 0}
   m_BuildTextureStacks: []

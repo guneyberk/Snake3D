@@ -1,12 +1,15 @@
+using Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
 {
     [SerializeField] Camera _camera;
+    
     [SerializeField] LayerMask _groundMask;
     [SerializeField] Transform _spawnPoint;
     float _bulletSpeed = 10000f;
+    public CinemachineVirtualCamera virtualCamera;
     public int pelletCount = 5;
     public float spreadAngle = 20f;
     private void Update()
@@ -48,10 +51,10 @@ public class MouseFollow : MonoBehaviour
         {
             for (int i = 0; i < pelletCount; i++)
             {
+
                 GameObject _bulletsShotgun = ObjectPool.Instance.SpawnBullet();
                 if (_bulletsShotgun != null)
                 {
-                    float randomSpread =UnityEngine.Random.Range(-spreadAngle, spreadAngle);
                     Vector3 dirShotgun = Aim();
                     _bulletsShotgun.SetActive(true);
                     _bulletsShotgun.transform.position = _spawnPoint.position;
@@ -60,9 +63,13 @@ public class MouseFollow : MonoBehaviour
             }
 
         }
+
+        if(ScriptableObjectManager.instance.itemData.itemName == "AR24") { }
+        if(ScriptableObjectManager.instance.itemData.itemName == "Sniper") { }
             GameObject _bullets = ObjectPool.Instance.SpawnBullet();
             if (_bullets != null)
             {
+                
                 Vector3 dir = Aim();
                 _bullets.SetActive(true);
                 _bullets.transform.position = _spawnPoint.position;
