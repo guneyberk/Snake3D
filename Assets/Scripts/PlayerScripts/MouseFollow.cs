@@ -1,17 +1,22 @@
 using Cinemachine;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
 {
     [SerializeField] Camera _camera;
-    
+
     [SerializeField] LayerMask _groundMask;
     [SerializeField] Transform _spawnPoint;
     float _bulletSpeed = 10000f;
     public CinemachineVirtualCamera virtualCamera;
     public int pelletCount = 5;
     public float spreadAngle = 20f;
+    private void Awake()
+    {
+       CinemachineComposer composer = virtualCamera.GetComponent<CinemachineComposer>();
+        composer.
+
+    }
     private void Update()
     {
         Aim();
@@ -64,18 +69,18 @@ public class MouseFollow : MonoBehaviour
 
         }
 
-        if(ScriptableObjectManager.instance.itemData.itemName == "AR24") { }
-        if(ScriptableObjectManager.instance.itemData.itemName == "Sniper") { }
-            GameObject _bullets = ObjectPool.Instance.SpawnBullet();
-            if (_bullets != null)
-            {
-                
-                Vector3 dir = Aim();
-                _bullets.SetActive(true);
-                _bullets.transform.position = _spawnPoint.position;
-                _bullets.transform.Rotate(dir);
-                _bullets.GetComponent<Rigidbody>().velocity = dir.normalized * _bulletSpeed * Time.deltaTime;
-            }
+        if (ScriptableObjectManager.instance.itemData.itemName == "AR24") { }
+        if (ScriptableObjectManager.instance.itemData.itemName == "Sniper") { }
+        GameObject _bullets = ObjectPool.Instance.SpawnBullet();
+        if (_bullets != null)
+        {
+
+            Vector3 dir = Aim();
+            _bullets.SetActive(true);
+            _bullets.transform.position = _spawnPoint.position;
+            _bullets.transform.Rotate(dir);
+            _bullets.GetComponent<Rigidbody>().velocity = dir.normalized * _bulletSpeed * Time.deltaTime;
+        }
     }
 }
 
