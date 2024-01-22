@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Collections;
 using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
@@ -8,14 +9,15 @@ public class MouseFollow : MonoBehaviour
     [SerializeField] LayerMask _groundMask;
     [SerializeField] Transform _spawnPoint;
     float _bulletSpeed = 10000f;
+    float _shakeTimer = 0.1f;
     public CinemachineVirtualCamera virtualCamera;
     public int pelletCount = 5;
-    public float spreadAngle = 20f;
+    CinemachineBasicMultiChannelPerlin noiseSettings;
+    float shakeFrequency = 5;
+
     private void Awake()
     {
-       CinemachineComposer composer = virtualCamera.GetComponent<CinemachineComposer>();
-        composer.
-
+        noiseSettings = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
     private void Update()
     {
@@ -54,6 +56,7 @@ public class MouseFollow : MonoBehaviour
 
         if (ScriptableObjectManager.instance.itemData.itemName == "Shotgun")
         {
+            StartCoroutine(GunShake(ScriptableObjectManager.instance.itemData.recoil));
             for (int i = 0; i < pelletCount; i++)
             {
 
@@ -66,14 +69,19 @@ public class MouseFollow : MonoBehaviour
                     _bulletsShotgun.GetComponent<Rigidbody>().velocity = (dirShotgun.normalized) * _bulletSpeed * Time.deltaTime;
                 }
             }
-
         }
 
-        if (ScriptableObjectManager.instance.itemData.itemName == "AR24") { }
-        if (ScriptableObjectManager.instance.itemData.itemName == "Sniper") { }
         GameObject _bullets = ObjectPool.Instance.SpawnBullet();
         if (_bullets != null)
         {
+            if (ScriptableObjectManager.instance.itemData.itemName == "AR24") 
+            {
+                StartCoroutine(GunShake(ScriptableObjectManager.instance.itemData.recoil));
+            }
+            if (ScriptableObjectManager.instance.itemData.itemName == "Sniper") 
+            {
+                StartCoroutine(GunShake(ScriptableObjectManager.instance.itemData.recoil));
+            }
 
             Vector3 dir = Aim();
             _bullets.SetActive(true);
@@ -81,6 +89,18 @@ public class MouseFollow : MonoBehaviour
             _bullets.transform.Rotate(dir);
             _bullets.GetComponent<Rigidbody>().velocity = dir.normalized * _bulletSpeed * Time.deltaTime;
         }
+    }
+
+
+    public IEnumerator GunShake(float recoil)
+    {
+        Debug.Log(recoil);
+        noiseSettings.m_AmplitudeGain = recoil;
+        noiseSettings.m_FrequencyGain = shakeFrequency;
+
+        yield return new WaitForSeconds(_shakeTimer);
+        noiseSettings.m_AmplitudeGain = 0;
+        noiseSettings.m_FrequencyGain = 0;
     }
 }
 

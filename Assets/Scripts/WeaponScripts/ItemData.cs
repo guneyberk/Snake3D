@@ -14,6 +14,7 @@ public class ItemData : ScriptableObject
     public float rateOfFire;
     public float reloadTime;
     public int damage;
+    public int recoil;
 
     public int startingAmmo;
 
